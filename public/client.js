@@ -18,7 +18,7 @@ var postpeers=() =>{
   var id_client = document.getElementById("id_client").value,
       public_key = forge.pki.publicKeyToPem(keyPair.publicKey);
    Data ={
-    id_client:"2",
+    id_client:document.getElementById("id_client").value,
     public_key:forge.pki.publicKeyToPem(keyPair.publicKey)
   }
   fetch( "/postpeers", { method: "POST", body:JSON.stringify(Data)} )
@@ -31,7 +31,8 @@ postpeers();
 document.getElementById("send").addEventListener('click', event => {
   try {
     var msg = document.getElementById("msg").value,
-        encryptedMsg = forge.util.encode64( keyPair.publicKey.encrypt( forge.util.encodeUtf8(msg)));
+     p_key= forge.pki.publicKeyFromPem((localStorage.getItem(document.getElementById("destinataire").value))),
+        encryptedMsg = forge.util.encode64( p_key.encrypt( forge.util.encodeUtf8(msg)));
 
     fetch( "/addLetter", { method: "POST", body:  encryptedMsg } )
     .then( _ => console.log(`Message envoyé: ${encryptedMsg}`) )
@@ -67,11 +68,10 @@ var reload = () =>
            var li = document.createElement("div");
         li.innerText = JSON.parse(Data).id_client;
         list.appendChild(li);
-        var li = document.createElement("div");
-        li.innerText =JSON.parse(Data).public_key ;
-        list.appendChild(li);
+        localStorage.setItem(String(JSON.parse(Data).id_client),JSON.parse(Data).public_key);
       } catch {};
     });
   });
 document.getElementById("reload").addEventListener('click', reload);
-document.getElementById("reload").addEventListener('click', reloadpeers);
+document.getElementById("userload").addEventListener('click', reloadpeers);
+document.getElementById("userload").addEventListener('click', postpeers);

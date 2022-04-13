@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5, h6 {
+    position:relative;
+    top: 50%;
+    left:45%
+}
+.peers {}
+#msg{
+    position: relative;
+    left:35%;
+}
+#send{
+    position: relative;
+    top: 50px;
+    left:15%;
+}
+.explication{
+    position: relative;
+    background-color: rgb(211, 166, 43);
+    height: 150px;
+    width: 500px;
+    border-radius: 10px;
+}
+.peers div{
+    transition: width 2s;
+}
+
+.peers div:hover{
+    background-color: aqua;
+}
+.peers div:active{
+    background-color: rgb(182, 72, 9);
+}

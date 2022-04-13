@@ -35,7 +35,7 @@ app.post("/addLetter", bodyParser.text(), (req,res) => {
 app.post( "/postpeers", bodyParser.text(), (req,res) => {
   peers[req.body] = req.body;
   res.end();
-  fs.writeFile(peersFileName, JSON.stringify(peers, 2, " "), err => 
+  fs.writeFile(peersFileName, JSON.stringify(peers,2," "), err => 
     { if (err) console.error(err); });
 } );
 app.listen(3340);

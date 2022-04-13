@@ -4,17 +4,27 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/node-forge@1.0.0/dist/forge.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Courriel</title>
   </head>
   <body> 
     <h1>Courriel</h1>
+    
+    <h2>Contacts</h3>
+    <div class="peers"></div>
+    <div class="explication">
+    <p>On vous demande de entrer un identifiant d'utilisateur<br>Ce dernier peut etre un nom un numero mais doit etre different de tout les autres utilisateur deja existant<p>
+    </div>
+      <h4>Utilisateur<input type="text" id="id_client"> <input id="userload" type="button" value="Charger..."></h2>
+    <h1>Messages <input id="reload" type="button" value="Charger..."></h1>
+   <div class="explication"><p>On va tout d'abord afficher les messages qui nous sont destiné </p></div>
+    <h3>Recu</h3>
+    <div class="messages"></div>
+    <h3>Envoyer</h3>
+    <div class="explication"><p>On demande maintenant de rentrer l'idée de l'un des contacts ci-dessus </p></div>
+     <label for="">Destinataire </label><input type="text" name="destiantaire " id="destinataire">   
     <textarea id="msg" cols="60" rows="3"></textarea>
     <input id="send" type="button" value="Envoyer...">
-    <h1>Contacts</h1>
-    <label>id_client</label><input type="text" id="id_client">
-    <div class="peers"></div>
-    <h1>Messages <input id="reload" type="button" value="Charger..."></h1>
-    <div class="messages"></div>
     <script src="client.js"> </script>
   </body>
 </html>

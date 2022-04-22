@@ -26,7 +26,7 @@ var postpeers=() =>{
   .catch( err => console.error(err) );
 } catch (err) { console.error(err); };}
 
-postpeers(); 
+//postpeers(); 
 
 document.getElementById("send").addEventListener('click', event => {
   try {
@@ -72,6 +72,13 @@ var reload = () =>
       } catch {};
     });
   });
-document.getElementById("reload").addEventListener('click', reload);
-document.getElementById("userload").addEventListener('click', reloadpeers);
+//document.getElementById("reload").addEventListener('click', reload);
+//document.getElementById("userload").addEventListener('click', reloadpeers);
 document.getElementById("userload").addEventListener('click', postpeers);
+var auto_refresh = setInterval(
+  (function () {
+    reload();
+    reloadpeers();
+
+   })
+  , 1000);

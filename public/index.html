@@ -9,22 +9,28 @@
   </head>
   <body> 
     <h1>Courriel</h1>
-    
-    <h2>Contacts</h3>
+    <div id="utilisateur">
+          <h2>Contacts</h2>
+          <div class="explication">
+          <p>Veuillez entrer le destinataire ci-dessous (par exemple : un email) et cliquer sur enregistrer<p>
+          </div><br><br>
+          <h4>Utilisateur<input type="text" id="id_client"> <input id="userload" type="button" value="S'enregistrer..."></h2>
     <div class="peers"></div>
-    <div class="explication">
-    <p>On vous demande de entrer un identifiant d'utilisateur<br>Ce dernier peut etre un nom un numero mais doit etre different de tout les autres utilisateur deja existant<p>
-    </div>
-      <h4>Utilisateur<input type="text" id="id_client"> <input id="userload" type="button" value="Charger..."></h2>
-    <h1>Messages <input id="reload" type="button" value="Charger..."></h1>
-   <div class="explication"><p>On va tout d'abord afficher les messages qui nous sont destiné </p></div>
-    <h3>Recu</h3>
+  </div>
+  <div id="message">
+    <h2>Messages </h2>
+    <h6 id="tag_envoyer">envoyer</h6>
+    <div class="explication"><p>Veuillez entrer le destinataire à qui vous voulez envoyer un message </p></div>
+    <label for="">Destinataire </label>
+    <input type="text" name="destiantaire " id="destinataire"><br>  
+   <textarea id="msg" cols="60" rows="3"></textarea>
+   <br><br>
+   <input id="send" type="button" value="Envoyer...">
+    <h3>Recu</h3><br><br><br><br><br><br>
+    <div class="explication"><p>Veuillez entrer le destinataire à qui vous voulez envoyer un message </p></div>
     <div class="messages"></div>
-    <h3>Envoyer</h3>
-    <div class="explication"><p>On demande maintenant de rentrer l'idée de l'un des contacts ci-dessus </p></div>
-     <label for="">Destinataire </label><input type="text" name="destiantaire " id="destinataire">   
-    <textarea id="msg" cols="60" rows="3"></textarea>
-    <input id="send" type="button" value="Envoyer...">
+  </div>
+  
     <script src="client.js"> </script>
   </body>
 </html>
